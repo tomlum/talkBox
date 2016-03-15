@@ -45,12 +45,12 @@ function talkBox.set(font,blurbList,speed,sound)
 	talkBox.pageY = 1
 end
 
-function talkBox.update(skip, continue)
+function talkBox.update(continue, skip)
 	if talkBox.currentBlurb > #talkBox.blurbList then
 		talkBox.text = ""
 		talkBox.busy = false
 		--Skip to end of 
-	elseif (talkBox.pageY+1)*talkBox.fontHeight*talkBox.lineHeight > talkBox.height then
+	elseif (talkBox.pageY)*talkBox.fontHeight*talkBox.lineHeight > talkBox.height then
 		talkBox.busy = false
 		if continue then
 			if talkBox.currentBlurb > #talkBox.blurbList then
@@ -72,7 +72,7 @@ function talkBox.update(skip, continue)
 		end
 		--If skip then finish the page
 	elseif skip then
-		while((talkBox.pageY+1)*talkBox.fontHeight*talkBox.lineHeight <= talkBox.height and talkBox.currentChar < string.len(talkBox.blurbList[talkBox.currentBlurb])+1) do
+		while((talkBox.pageY)*talkBox.fontHeight*talkBox.lineHeight <= talkBox.height and talkBox.currentChar < string.len(talkBox.blurbList[talkBox.currentBlurb])+1) do
 			talkBox.update(false,false)
 		end
 
@@ -125,7 +125,7 @@ function talkBox.update(skip, continue)
 	else
 		talkBox.busy = false
 		if continue then
-			talkBox.pageY = 0
+			talkBox.pageY = 1
 			talkBox.text = ""
 			talkBox.currentChar = 1
 			talkBox.lineWidth = 0
