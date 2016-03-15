@@ -1,4 +1,5 @@
 # talkBox
+https://gfycat.com/ReliablePossibleAmbushbug
 
 A library for doing simple speech boxes a la games like Undertale.  
 It does a lot of font related calculations for you, so you never have overspill outside a region, regardless of size or type of font.
