@@ -1,7 +1,7 @@
 # talkBox
 https://gfycat.com/ReliablePossibleAmbushbug
 
-A library for doing simple speech boxes a la games like Undertale.  
+A library for doing simple speech boxes a la games like Undertale in the LÖVE engine.  
 It does a lot of font related calculations for you, so you never have overspill outside a region, regardless of size or type of font.
 As well, line breaks are made before a word is typed, rather than as the text is being added.
 
