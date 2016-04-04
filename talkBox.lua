@@ -60,10 +60,14 @@ function talkBox.update(continue, skip)
 				talkBox.pageY = talkBox.pageY - math.floor((talkBox.pageY))
 				--Add the next Char and play sound
 				talkBox.text = talkBox.text..talkBox.nextChar
-				repplay(talkBox.sound)
+				if talkBox.sound~= nil then
+					repplay(talkBox.sound)
+				end
 			else
 				talkBox.pageY = talkBox.pageY - math.floor((talkBox.pageY))
-				repplay(talkBox.sound)
+				if talkBox.sound~= nil then
+					repplay(talkBox.sound)
+				end
 				talkBox.text = ""
 				if talkBox.nextChar ~= " " then
 					talkBox.text = talkBox.text..talkBox.nextChar
